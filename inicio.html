@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotaract Mauá · 8 de Dezembro</title>
+    <!-- Google Fonts para um ar mais profissional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- reset e base ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f7f2f4;
+            color: #2c1a22;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.5rem 1.5rem;
+        }
+
+        /* container principal – clean, com leveza */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(241, 54, 125, 0.15);
+            padding: 2.8rem 3.2rem;
+            transition: 0.2s;
+            border: 1px solid rgba(241, 54, 125, 0.06);
+        }
+
+        /* ----- cabeçalho institucional ----- */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.8rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 2px solid #f5e3e9;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-left .tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #f1367d;
+            background: #fce8ef;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 0.3rem;
+            align-self: flex-start;
+            border: 1px solid #f7c8d9;
+        }
+
+        .header-left h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1f1118;
+            line-height: 1.1;
+        }
+
+        .header-left h1 span {
+            color: #f1367d;
+            background: linear-gradient(145deg, #f1367d, #c92a5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-left .sub {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #6e4b5a;
+            margin-top: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .header-left .sub .badge {
+            background: #fce8ef;
+            padding: 0.15rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #b03a5c;
+            border: 1px solid #f7b8ce;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header-right .btn-outline {
+            border: 1.5px solid #f1367d;
+            background: transparent;
+            color: #f1367d;
+            padding: 0.45rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.2s;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+        }
+
+        .header-right .btn-outline:hover {
+            background: #f1367d;
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(241, 54, 125, 0.2);
+        }
+
+        .header-right .btn-solid {
+            background: #f1367d;
+            color: #fff;
+            padding: 0.45rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: none;
+            transition: 0.2s;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+            box-shadow: 0 6px 16px rgba(241, 54, 125, 0.25);
+        }
+
+        .header-right .btn-solid:hover {
+            background: #c92a5e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(241, 54, 125, 0.3);
+        }
+
+        /* ----- hero / destaque principal ----- */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 1.5rem 0 2.8rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 2;
+            min-width: 260px;
+        }
+
+        .hero-text h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #1f1118;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-text h2 em {
+            color: #f1367d;
+            font-style: normal;
+            background: linear-gradient(145deg, #f1367d, #c92a5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #4e3643;
+            max-width: 520px;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            flex: 1;
+            min-width: 180px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: #fcf7f9;
+            padding: 1.8rem 2rem;
+            border-radius: 2rem;
+            border: 1px solid #f5e3e9;
+            justify-content: space-around;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #f1367d;
+            line-height: 1;
+        }
+
+        .stat-item .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7a5b69;
+            font-weight: 500;
+        }
+
+        /* ----- grade de cards profissionais ----- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+            margin: 2.8rem 0 2.2rem;
+        }
+
+        .card {
+            background: #fcf7f9;
+            border-radius: 1.6rem;
+            padding: 1.8rem 1.5rem 1.8rem;
+            border: 1px solid #f0e2e7;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .card:hover {
+            border-color: #f1367d;
+            box-shadow: 0 12px 28px -8px rgba(241, 54, 125, 0.12);
+            background: #ffffff;
+            transform: translateY(-4px);
+        }
+
+        .card .icon {
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 0.6rem;
+            color: #c92a5e;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1f1118;
+            margin-bottom: 0.3rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #5d4352;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .card .link {
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #f1367d;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-bottom: 1.5px solid transparent;
+            transition: 0.15s;
+        }
+
+        .card .link:hover {
+            border-bottom-color: #f1367d;
+        }
+
+        /* ----- citação / depoimento (mais sóbrio) ----- */
+        .quote-block {
+            background: #fcf7f9;
+            border-radius: 1.6rem;
+            padding: 1.8rem 2.4rem;
+            margin: 2.2rem 0 2rem;
+            border-left: 5px solid #f1367d;
+            border-right: 1px solid #f0e2e7;
+            border-top: 1px solid #f0e2e7;
+            border-bottom: 1px solid #f0e2e7;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .quote-block blockquote {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #2c1a22;
+            max-width: 70%;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .quote-block .citacao-autor {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #f1367d;
+            letter-spacing: 0.3px;
+        }
+
+        .quote-block .selo {
+            background: #f1367d;
+            color: #fff;
+            padding: 0.4rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(241, 54, 125, 0.2);
+        }
+
+        /* ----- linha de info extra ----- */
+        .info-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            background: #ffffff;
+            padding: 0.5rem 0.2rem;
+            margin: 1.8rem 0 0.5rem;
+            border-top: 1px solid #f0e2e7;
+            padding-top: 1.8rem;
+        }
+
+        .info-strip .item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #4e3643;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .info-strip .item span {
+            background: #fce8ef;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #b03a5c;
+            border: 1px solid #f7b8ce;
+        }
+
+        /* ----- rodapé profissional ----- */
+        .footer {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 2px solid #f5e3e9;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: #6e4b5a;
+            font-size: 0.9rem;
+        }
+
+        .footer .copy {
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+
+        .footer .copy strong {
+            color: #1f1118;
+            font-weight: 600;
+        }
+
+        .footer .social {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .footer .social a {
+            color: #6e4b5a;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: 0.15s;
+            border-bottom: 1.5px solid transparent;
+        }
+
+        .footer .social a:hover {
+            color: #f1367d;
+            border-bottom-color: #f1367d;
+        }
+
+        /* ----- responsividade ----- */
+        @media (max-width: 750px) {
+            body { padding: 1.2rem; }
+            .container { padding: 1.8rem 1.2rem; }
+            .header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .header-left h1 { font-size: 2.2rem; }
+            .hero { flex-direction: column; }
+            .hero-text p { max-width: 100%; }
+            .hero-stats { width: 100%; justify-content: space-around; }
+            .quote-block blockquote { max-width: 100%; }
+            .quote-block { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .footer { flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+        }
+
+        @media (max-width: 480px) {
+            .header-left h1 { font-size: 1.9rem; }
+            .header-right .btn-outline,
+            .header-right .btn-solid { padding: 0.4rem 1.2rem; font-size: 0.75rem; }
+            .stat-item .number { font-size: 1.8rem; }
+        }
+
+        /* pequenos toques */
+        .dotted-divider {
+            width: 40px;
+            height: 3px;
+            background: #f1367d;
+            border-radius: 10px;
+            opacity: 0.3;
+            margin: 0.2rem 0 0.6rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- cabeçalho profissional -->
+        <header class="header">
+            <div class="header-left">
+                <span class="tag">Rotaract · Distrito 4420</span>
+                <h1>Mauá <span>8 de Dezembro</span></h1>
+                <div class="sub">
+                    <span>Companheirismo através do serviço</span>
+                    <span class="badge">Fundado em 13/06/2026</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="#" class="btn-outline">Sobre</a>
+                <a href="#" class="btn-solid">Participe</a>
+            </div>
+        </header>
+
+        <!-- hero com estatísticas -->
+        <div class="hero">
+            <div class="hero-text">
+                <h2>Jovens que <em>impactam</em> Mauá</h2>
+                <p>Somos um clube de serviço que une propósito, liderança e ação comunitária. Cada projeto é um passo para transformar realidades.</p>
+                <div style="margin-top: 0.8rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                    <span style="background: #fce8ef; padding: 0.2rem 1.2rem; border-radius: 30px; font-size: 0.8rem; font-weight: 500; color: #b03a5c; border: 1px solid #f7b8ce;">Próxima reunião: qui, 19h</span>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="number">??</div>
+                    <div class="label">Rotaractianos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">0</div>
+                    <div class="label">projetos em 2026-27</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">0</div>
+                    <div class="label">pessoas impactadas</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- cards principais -->
+        <div class="cards-grid">
+            <div class="card">
+                <span class="icon">🤝</span>
+                <h3>Ação Comunitária</h3>
+                <p>Doações, visitas e campanhas que levam esperança a quem mais precisa.</p>
+                <a href="#" class="link">Conhecer projetos →</a>
+            </div>
+            <div class="card">
+                <span class="icon">🧭</span>
+                <h3>Desenvolvimento</h3>
+                <p>Capacitação, palestras e trocas que formam lideranças para o futuro.</p>
+                <a href="#" class="link">Ver calendário →</a>
+            </div>
+            <div class="card">
+                <span class="icon">🌍</span>
+                <h3>Conexão Global</h3>
+                <p>Fazemos parte da maior rede de jovens do Rotary International.</p>
+                <a href="#" class="link">Sobre o Rotary →</a>
+            </div>
+            <div class="card">
+                <span class="icon">❤️</span>
+                <h3>Amizade e Serviço</h3>
+                <p>Um ambiente acolhedor onde cada membro é parte essencial da missão.</p>
+                <a href="#" class="link">Faça parte →</a>
+            </div>
+        </div>
+
+        <!-- citação / depoimento -->
+        <div class="quote-block">
+            <blockquote>
+                “O Rotaract nos ensina que pequenos atos, feitos com constância, geram ondas de mudança. Mauá 8 de dezembro é isso: compromisso e coração.”
+                <div class="citacao-autor" style="margin-top: 0.2rem;">— Clara Mendes, presidente 2025-26</div>
+            </blockquote>
+            <span class="selo">#SomosRotaract</span>
+        </div>
+
+        <!-- strip de informações adicionais -->
+        <div class="info-strip">
+            <div class="item">📅 <span>Reuniões</span> ???? </div>
+            <div class="item">📍 <span>Local</span> Mauá/SP · ????</div>
+            <div class="item">📧 <span>Contato</span> rotaractmaua8dedezembro@gmail.com</div>
+        </div>
+
+        <!-- rodapé -->
+        <footer class="footer">
+            <div class="copy">
+                <strong>Rotaract Mauá 8 de Dezembro</strong> · 2026-27 · Todos os direitos reservados
+            </div>
+            <div class="social">
+                <a href="https://www.instagram.com/rotaractmaua8dezembro?igsh=MXdlOWIya3JkaHllaw==">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </footer>
+
+        <!-- linha decorativa sutil -->
+        <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 0.4rem; opacity: 0.3;">
+            <span style="background: #f1367d; width: 24px; height: 4px; border-radius: 10px;"></span>
+            <span style="background: #d93772; width: 24px; height: 4px; border-radius: 10px;"></span>
+            <span style="background: #f05a8c; width: 24px; height: 4px; border-radius: 10px;"></span>
+        </div>
+    </div>
+</body>
+</html>
