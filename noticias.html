@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotaract Mauá - Últimas Notícias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .noticia-item {
+      display: flex;
+      gap: 1.5rem;
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 12px var(--shadow);
+      border-left: 6px solid var(--primary);
+      transition: transform 0.3s;
+    }
+
+    body.dark .noticia-item {
+      background: #2a2422;
+    }
+
+    .noticia-item:hover {
+      transform: translateX(6px);
+    }
+
+    .noticia-item .data {
+      min-width: 80px;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .noticia-item .conteudo h3 {
+      font-family: var(--font-title);
+      margin-bottom: 0.3rem;
+    }
+
+    .noticia-item .conteudo p {
+      opacity: 0.85;
+      font-size: 0.95rem;
+    }
+
+    .noticia-item .tag {
+      display: inline-block;
+      background: var(--secondary);
+      color: #1A1412;
+      padding: 0.1rem 1rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo"><i class="fas fa-hands-helping"></i> Rotaract Mauá</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="historia.html">A História</a>
+      <a href="padrinho.html">Clube Padrinho</a>
+      <a href="noticias.html" class="active">Últimas Notícias</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema"><i class="fas fa-moon"></i></button>
+  </header>
+
+  <!-- ===== CONTEÚDO ===== -->
+  <section class="container fade-in">
+    <h1 class="page-title">Últimas Notícias</h1>
+
+    <div style="max-width: 850px; margin: 0 auto;">
+
+      <div class="noticia-item">
+        <div class="data">15 Jul 2026</div>
+        <div class="conteudo">
+          <h3>Campanha do Agasalho 2026 bate recorde de arrecadação</h3>
+          <p>Mais de 2.500 peças de roupas e 300 cobertores foram doados à comunidade carente de Mauá.</p>
+          <span class="tag">Destaque</span>
+        </div>
+      </div>
+
+      <div class="noticia-item">
+        <div class="data">02 Jul 2026</div>
+        <div class="conteudo">
+          <h3>Reunião de Planejamento define metas para o semestre</h3>
+          <p>Novos projetos e parcerias foram discutidos na assembleia geral do clube.</p>
+          <span class="tag">Institucional</span>
+        </div>
+      </div>
+
+      <div class="noticia-item">
+        <div class="data">20 Jun 2026</div>
+        <div class="conteudo">
+          <h3>Rotaract Mauá participa de mutirão de limpeza no Parque Municipal</h3>
+          <p>Ação ambiental reuniu mais de 50 voluntários e recolheu 200 kg de resíduos.</p>
+          <span class="tag">Meio Ambiente</span>
+        </div>
+      </div>
+
+      <div class="noticia-item">
+        <div class="data">05 Jun 2026</div>
+        <div class="conteudo">
+          <h3>Natal Solidário 2026 já está em planejamento</h3>
+          <p>O tradicional projeto natalino será realizado em dezembro e espera atender 500 famílias.</p>
+          <span class="tag">Projetos</span>
+        </div>
+      </div>
+
+      <div class="noticia-item">
+        <div class="data">18 Mai 2026</div>
+        <div class="conteudo">
+          <h3>Novos membros são empossados no clube</h3>
+          <p>Cinco novos jovens integraram o Rotaract Mauá e já participam das atividades.</p>
+          <span class="tag">Membros</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="logo-footer"><i class="fas fa-hands-helping"></i> Rotaract Mauá 8 de Dezembro</div>
+      <p style="font-weight:300;">Jovens em ação, transformando vidas</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="historia.html">A História</a>
+        <a href="padrinho.html">Clube Padrinho</a>
+        <a href="noticias.html">Últimas Notícias</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <p style="margin-top:1.5rem; font-size:0.9rem; opacity:0.7;">&copy; <span id="year"></span> Rotaract Club de Mauá 8 de Dezembro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

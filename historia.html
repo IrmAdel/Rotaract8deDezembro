@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotaract Mauá - A História</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .historia-content {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .historia-content h3 {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      margin-top: 2.5rem;
+      color: var(--primary);
+    }
+
+    .historia-content h3 i {
+      margin-right: 0.5rem;
+    }
+
+    .historia-content p {
+      margin: 1rem 0;
+      font-size: 1.05rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      padding: 1.2rem 1.5rem;
+      background: #fff;
+      border-radius: 8px;
+      border-left: 6px solid var(--secondary);
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+
+    body.dark .timeline-item {
+      background: #2a2422;
+    }
+
+    .timeline-item .ano {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.2rem;
+      min-width: 70px;
+    }
+
+    .timeline-item .desc {
+      flex: 1;
+    }
+
+    .galeria-conselhos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .galeria-conselhos .conselho-item {
+      text-align: center;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+
+    body.dark .galeria-conselhos .conselho-item {
+      background: #2a2422;
+    }
+
+    .galeria-conselhos .conselho-item img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid var(--secondary);
+    }
+
+    .galeria-conselhos .conselho-item .nome {
+      margin-top: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo"><i class="fas fa-hands-helping"></i> Rotaract Mauá</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="historia.html" class="active">A História</a>
+      <a href="padrinho.html">Clube Padrinho</a>
+      <a href="noticias.html">Últimas Notícias</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema"><i class="fas fa-moon"></i></button>
+  </header>
+
+  <!-- ===== CONTEÚDO ===== -->
+  <section class="container fade-in">
+    <h1 class="page-title">A História</h1>
+
+    <div class="historia-content">
+
+      <!-- HISTÓRIA DO ROTARACT BRASIL -->
+      <h3><i class="fas fa-flag"></i> História do Rotaract Brasil</h3>
+      <p>
+        O Rotaract surgiu nos Estados Unidos em 1968, como um programa de Rotary International para jovens de 18 a 30 anos. No Brasil, o primeiro clube foi fundado em 1970, em São Paulo. Desde então, o movimento cresceu exponencialmente, espalhando-se por todas as regiões do país.
+      </p>
+      <p>
+        O Rotaract Club de Mauá 8 de Dezembro foi fundado em <strong>8 de dezembro de 1982</strong>, tornando-se um dos clubes mais antigos e tradicionais da região do ABC Paulista. Ao longo de mais de quatro décadas, o clube tem desempenhado um papel fundamental na promoção do desenvolvimento juvenil e na realização de projetos sociais que impactam positivamente a comunidade de Mauá.
+      </p>
+
+      <!-- LINHA DO TEMPO -->
+      <h3><i class="fas fa-clock"></i> Nossa Trajetória</h3>
+      <div class="timeline-item">
+        <div class="ano">1982</div>
+        <div class="desc"><strong>Fundação</strong> — Em 8 de dezembro, é fundado o Rotaract Club de Mauá 8 de Dezembro, com o apoio do Rotary Club de Mauá.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="ano">1990</div>
+        <div class="desc"><strong>Primeiro Grande Projeto</strong> — Realização da primeira campanha do agasalho, que se tornou tradição anual.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="ano">2000</div>
+        <div class="desc"><strong>Expansão</strong> — O clube amplia suas ações, passando a atuar em parceria com outras entidades da cidade.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="ano">2010</div>
+        <div class="desc"><strong>Reconhecimento</strong> — O clube recebe prêmios e menções honrosas por seus projetos sociais inovadores.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="ano">2022</div>
+        <div class="desc"><strong>40 Anos</strong> — Celebração das quatro décadas de serviços prestados à comunidade de Mauá.</div>
+      </div>
+
+      <!-- GALERINHA DOS CONSELHOS -->
+      <h3 style="margin-top: 3rem;"><i class="fas fa-users"></i> Galerinha dos Conselhos</h3>
+      <p>Conheça alguns dos membros que já passaram pelos conselhos do clube ao longo dos anos.</p>
+
+      <div class="galeria-conselhos">
+        <div class="conselho-item">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Membro 1" />
+          <div class="nome">Carlos Andrade</div>
+          <div style="font-size:0.8rem; opacity:0.7;">Presidente (2023-2024)</div>
+        </div>
+        <div class="conselho-item">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Membro 2" />
+          <div class="nome">Mariana Silva</div>
+          <div style="font-size:0.8rem; opacity:0.7;">Vice-Presidente (2023-2024)</div>
+        </div>
+        <div class="conselho-item">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Membro 3" />
+          <div class="nome">Rafael Lima</div>
+          <div style="font-size:0.8rem; opacity:0.7;">Secretário (2023-2024)</div>
+        </div>
+        <div class="conselho-item">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Membro 4" />
+          <div class="nome">Fernanda Costa</div>
+          <div style="font-size:0.8rem; opacity:0.7;">Tesoureira (2023-2024)</div>
+        </div>
+        <div class="conselho-item">
+          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Membro 5" />
+          <div class="nome">Bruno Martins</div>
+          <div style="font-size:0.8rem; opacity:0.7;">Dir. de Projetos (2023-2024)</div>
+        </div>
+        <div class="conselho-item">
+          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Membro 6" />
+          <div class="nome">Patrícia Souza</div>
+          <div style="font-size:0.8rem; opacity:0.7;">Dir. de Imagem (2023-2024)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="logo-footer"><i class="fas fa-hands-helping"></i> Rotaract Mauá 8 de Dezembro</div>
+      <p style="font-weight:300;">Jovens em ação, transformando vidas</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="historia.html">A História</a>
+        <a href="padrinho.html">Clube Padrinho</a>
+        <a href="noticias.html">Últimas Notícias</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <p style="margin-top:1.5rem; font-size:0.9rem; opacity:0.7;">&copy; <span id="year"></span> Rotaract Club de Mauá 8 de Dezembro. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

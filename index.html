@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotaract Mauá 8 de Dezembro - Home</title>
+  <meta name="description" content="Rotaract Club de Mauá 8 de Dezembro - Jovens em ação, transformando vidas desde 1982" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Estilos específicos da Home */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: linear-gradient(135deg, var(--primary-dark), #1A1412);
+      color: #fff;
+      padding: 4rem 1.5rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80') center/cover no-repeat;
+      opacity: 0.2;
+      transform: scale(1.1);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-title);
+      font-size: clamp(2.5rem, 8vw, 4.2rem);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 span {
+      color: var(--secondary);
+    }
+
+    .hero .subtitle {
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      opacity: 0.9;
+      font-weight: 300;
+      border-top: 2px solid var(--secondary);
+      border-bottom: 2px solid var(--secondary);
+      display: inline-block;
+      padding: 0.4rem 1.5rem;
+      margin: 0.8rem 0 1.8rem;
+    }
+
+    .hero-counters {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-counters .number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .hero-counters .label {
+      font-weight: 300;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .destaque-box {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px var(--shadow);
+      border-left: 6px solid var(--primary);
+      margin: 2rem 0;
+    }
+
+    body.dark .destaque-box {
+      background: #2a2422;
+    }
+
+    .projetos-destaque {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .projeto-item {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 10px var(--shadow);
+      border-bottom: 4px solid var(--secondary);
+    }
+
+    body.dark .projeto-item {
+      background: #2a2422;
+    }
+
+    .projeto-item i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    body.dark .projeto-item i {
+      color: var(--secondary);
+    }
+
+    body.dark .projeto-item h4 {
+      color: var(--text-light);
+    }
+
+    body.dark .projeto-item p {
+      color: #d0ccc8;
+    }
+
+    /* CORREÇÃO: Depoimentos da Home */
+    .testimonial-card {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 8px;
+      border-top: 4px solid var(--secondary);
+      box-shadow: 0 2px 10px var(--shadow);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .testimonial-card p {
+      margin: 0.5rem 0;
+      color: var(--text-dark);
+    }
+
+    .testimonial-card strong {
+      color: var(--text-dark);
+    }
+
+    .testimonial-card i {
+      color: var(--secondary);
+      font-size: 1.8rem;
+    }
+
+    body.dark .testimonial-card {
+      background: #2a2422 !important;
+      color: var(--text-light) !important;
+    }
+
+    body.dark .testimonial-card p {
+      color: #d0ccc8 !important;
+    }
+
+    body.dark .testimonial-card strong {
+      color: var(--text-light) !important;
+    }
+
+    body.dark .testimonial-card i {
+      color: var(--secondary) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-hands-helping"></i>
+      Rotaract Mauá
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="historia.html">A História</a>
+      <a href="padrinho.html">Clube Padrinho</a>
+      <a href="noticias.html">Últimas Notícias</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Rotaract Club de <span>Mauá</span> 8 de Dezembro</h1>
+      <div class="subtitle">Jovens em ação, transformando vidas</div>
+      <p style="font-size:1.1rem; max-width:600px; margin:0 auto; opacity:0.9;">
+        Servindo à comunidade desde 1982 com projetos sociais, liderança e desenvolvimento pessoal.
+      </p>
+      <div class="hero-counters">
+        <div>
+          <div class="number" data-count="42">0</div>
+          <div class="label">Anos de história</div>
+        </div>
+        <div>
+          <div class="number" data-count="120">0</div>
+          <div class="label">Projetos realizados</div>
+        </div>
+        <div>
+          <div class="number" data-count="5000">0</div>
+          <div class="label">Pessoas atendidas</div>
+        </div>
+      </div>
+      <div style="margin-top: 2rem;">
+        <a href="historia.html" class="btn">Conheça nossa história</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE EM DESTAQUE ===== -->
+  <section class="container fade-in">
+    <h2 class="section-title">Sobre o Clube</h2>
+    <div class="destaque-box">
+      <p style="font-size:1.1rem;">
+        <strong>Fundado em 8 de dezembro de 1982</strong>, o Rotaract Club de Mauá 8 de Dezembro atua há mais de 40 anos na cidade de Mauá, promovendo ações sociais, desenvolvimento pessoal e liderança jovem. Somos o clube mais tradicional de Mauá, com uma trajetória de serviço e compromisso com a comunidade.
+      </p>
+    </div>
+
+    <div class="grid-3" style="margin-top: 2rem;">
+      <div class="card">
+        <i class="fas fa-bullseye"></i>
+        <h3>Missão</h3>
+        <p>Promover o desenvolvimento de jovens líderes através do serviço à comunidade, networking e crescimento pessoal e profissional.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-eye"></i>
+        <h3>Visão</h3>
+        <p>Ser referência em transformação social e formação de líderes éticos e comprometidos com o bem comum.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-gem"></i>
+        <h3>Valores</h3>
+        <p>Ética, solidariedade, liderança, respeito, diversidade e compromisso com a comunidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJETOS EM DESTAQUE ===== -->
+  <section class="section-gray fade-in">
+    <div class="container">
+      <h2 class="section-title">Projetos em Destaque</h2>
+      <div class="projetos-destaque">
+        <div class="projeto-item">
+          <i class="fas fa-gift"></i>
+          <h4>Natal Solidário</h4>
+          <p>Distribuição de presentes e ceia para famílias carentes.</p>
+        </div>
+        <div class="projeto-item">
+          <i class="fas fa-tshirt"></i>
+          <h4>Campanha do Agasalho</h4>
+          <p>Arrecadação de roupas e cobertores para o inverno.</p>
+        </div>
+        <div class="projeto-item">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h4>Ação Solidária</h4>
+          <p>Visitas a asilos e creches com atividades recreativas.</p>
+        </div>
+        <div class="projeto-item">
+          <i class="fas fa-leaf"></i>
+          <h4>Meio Ambiente</h4>
+          <p>Plantio de árvores e mutirão de limpeza em parques.</p>
+        </div>
+      </div>
+      <div class="text-center mt-2">
+        <a href="historia.html" class="btn btn-outline">Conheça todos os projetos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="container fade-in last-section">
+    <h2 class="section-title">Depoimentos</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+      <!-- Depoimento 1 -->
+      <div class="testimonial-card" style="background:#fff; padding:1.8rem; border-radius:8px; border-top:4px solid var(--secondary); box-shadow:0 2px 10px var(--shadow); transition: background 0.4s;">
+        <i class="fas fa-quote-right" style="color:var(--secondary); font-size:1.8rem;"></i>
+        <p style="margin: 0.5rem 0;">"Participar do Rotaract mudou minha visão de mundo. Aprendi a servir e liderar."</p>
+        <strong>- Ana P.</strong>
+      </div>
+      <!-- Depoimento 2 -->
+      <div class="testimonial-card" style="background:#fff; padding:1.8rem; border-radius:8px; border-top:4px solid var(--secondary); box-shadow:0 2px 10px var(--shadow); transition: background 0.4s;">
+        <i class="fas fa-quote-right" style="color:var(--secondary); font-size:1.8rem;"></i>
+        <p style="margin: 0.5rem 0;">"Aqui fiz amigos para a vida e pude contribuir com minha cidade."</p>
+        <strong>- João M.</strong>
+      </div>
+      <!-- Depoimento 3 -->
+      <div class="testimonial-card" style="background:#fff; padding:1.8rem; border-radius:8px; border-top:4px solid var(--secondary); box-shadow:0 2px 10px var(--shadow); transition: background 0.4s;">
+        <i class="fas fa-quote-right" style="color:var(--secondary); font-size:1.8rem;"></i>
+        <p style="margin: 0.5rem 0;">"O clube é uma escola de cidadania e empatia. Orgulho de fazer parte."</p>
+        <strong>- Carla S.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="logo-footer">
+        <i class="fas fa-hands-helping"></i> Rotaract Mauá 8 de Dezembro
+      </div>
+      <p style="font-weight:300;">Jovens em ação, transformando vidas</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="historia.html">A História</a>
+        <a href="padrinho.html">Clube Padrinho</a>
+        <a href="noticias.html">Últimas Notícias</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <p style="margin-top:1.5rem; font-size:0.9rem; opacity:0.7;">
+        &copy; <span id="year"></span> Rotaract Club de Mauá 8 de Dezembro. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Contador animado específico da home
+    (function() {
+      const counters = document.querySelectorAll('.hero-counters .number');
+      let animated = false;
+
+      function animateCounters() {
+        if (animated) return;
+        animated = true;
+        counters.forEach(function(c) {
+          const target = parseInt(c.dataset.count, 10);
+          const increment = target / 60;
+          let current = 0;
+          function update() {
+            current += increment;
+            if (current < target) {
+              c.textContent = Math.floor(current);
+              requestAnimationFrame(update);
+            } else {
+              c.textContent = target;
+            }
+          }
+          update();
+        });
+      }
+
+      const heroObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          animateCounters();
+        }
+      }, { threshold: 0.3 });
+      heroObs.observe(document.querySelector('.hero'));
+    })();
+  </script>
+
+</body>
+</html>
