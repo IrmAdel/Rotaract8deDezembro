@@ -58,19 +58,26 @@
       flex: 1;
     }
 
+    /* ===== GALERIA SIMÉTRICA ===== */
     .galeria-conselhos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 1.2rem;
       margin-top: 1.5rem;
+      justify-content: center;
     }
 
     .galeria-conselhos .conselho-item {
       text-align: center;
       background: #fff;
-      padding: 1rem;
+      padding: 1.2rem 0.8rem;
       border-radius: 8px;
       box-shadow: 0 2px 10px var(--shadow);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .galeria-conselhos .conselho-item:hover {
+      box-shadow: 0 4px 20px var(--shadow);
     }
 
     body.dark .galeria-conselhos .conselho-item {
@@ -81,14 +88,63 @@
       width: 100%;
       aspect-ratio: 1/1;
       object-fit: cover;
-      border-radius: 8px;
-      border: 3px solid var(--secondary);
+      border-radius: 50%;
+      border: 4px solid var(--secondary);
+      max-width: 120px;
+      margin: 0 auto;
+      display: block;
     }
 
     .galeria-conselhos .conselho-item .nome {
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+
+    .galeria-conselhos .conselho-item .cargo {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-top: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .galeria-conselhos .conselho-item .cargo small {
+      display: block;
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    .ano-destaque {
+      background: var(--secondary);
+      color: #fff;
+      padding: 0.15rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
       font-weight: 600;
-      font-size: 0.9rem;
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 1024px) {
+      .galeria-conselhos {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .galeria-conselhos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .galeria-conselhos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -147,41 +203,58 @@
       </div>
 
       <!-- GALERINHA DOS CONSELHOS -->
-      <h3 style="margin-top: 3rem;"><i class="fas fa-users"></i> Galerinha dos Conselhos</h3>
-      <p>Conheça alguns dos membros que já passaram pelos conselhos do clube ao longo dos anos.</p>
+      <h3 style="margin-top: 3rem;"><i class="fas fa-users"></i> Galerinha do Conselho 2026-27</h3>
+      <p>Conheça o time que está à frente do clube no ano rotário 2026-27, liderando com dedicação e paixão pelo serviço.</p>
 
       <div class="galeria-conselhos">
         <div class="conselho-item">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Membro 1" />
-          <div class="nome">Carlos Andrade</div>
-          <div style="font-size:0.8rem; opacity:0.7;">Presidente (2023-2024)</div>
+          <img src="conselho/victoria.png" alt="Victoria Eugênio" />
+          <div class="nome">Victoria Eugênio</div>
+          <div class="cargo">Presidente <small>Diretora de Oratória</small></div>
+          <span class="ano-destaque">2026-27</span>
         </div>
         <div class="conselho-item">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Membro 2" />
-          <div class="nome">Mariana Silva</div>
-          <div style="font-size:0.8rem; opacity:0.7;">Vice-Presidente (2023-2024)</div>
+          <img src="conselho/pedro.png" alt="Pedro Vasconcelos" />
+          <div class="nome">Pedro Vasconcelos</div>
+          <div class="cargo">Vice-Presidente <small>Imagem Pública &amp; Protocolo</small></div>
+          <span class="ano-destaque">2026-27</span>
         </div>
         <div class="conselho-item">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Membro 3" />
-          <div class="nome">Rafael Lima</div>
-          <div style="font-size:0.8rem; opacity:0.7;">Secretário (2023-2024)</div>
+          <img src="conselho/andre.png" alt="André Girialdeli" />
+          <div class="nome">André Girialdeli</div>
+          <div class="cargo">Secretário <small>DEI</small></div>
+          <span class="ano-destaque">2026-27</span>
         </div>
         <div class="conselho-item">
-          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Membro 4" />
-          <div class="nome">Fernanda Costa</div>
-          <div style="font-size:0.8rem; opacity:0.7;">Tesoureira (2023-2024)</div>
+          <img src="conselho/wendell.png" alt="Wendell Almeida" />
+          <div class="nome">Wendell Almeida</div>
+          <div class="cargo">DQA <small>Desenv. Quadro Associativo</small></div>
+          <span class="ano-destaque">2026-27</span>
         </div>
         <div class="conselho-item">
-          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Membro 5" />
-          <div class="nome">Bruno Martins</div>
-          <div style="font-size:0.8rem; opacity:0.7;">Dir. de Projetos (2023-2024)</div>
+          <img src="conselho/anna.png" alt="Anna Beatriz" />
+          <div class="nome">Anna Beatriz</div>
+          <div class="cargo">Tesoureira</div>
+          <span class="ano-destaque">2026-27</span>
         </div>
         <div class="conselho-item">
-          <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Membro 6" />
-          <div class="nome">Patrícia Souza</div>
-          <div style="font-size:0.8rem; opacity:0.7;">Dir. de Imagem (2023-2024)</div>
+          <img src="conselho/rafaella.png" alt="Rafaella Bonardi" />
+          <div class="nome">Rafaella Bonardi</div>
+          <div class="cargo">Comissão de Projetos</div>
+          <span class="ano-destaque">2026-27</span>
+        </div>
+        <div class="conselho-item">
+          <img src="conselho/malu.png" alt="Malu Zenke" />
+          <div class="nome">Malu Zenke</div>
+          <div class="cargo">Fundação Rotária</div>
+          <span class="ano-destaque">2026-27</span>
         </div>
       </div>
+
+      <p style="text-align: center; margin-top: 2rem; font-style: italic; opacity: 0.8;">
+        <i class="fas fa-quote-left" style="margin-right: 0.5rem; opacity: 0.5;"></i>
+        Jovens unidos pelo serviço, liderando com propósito e transformando Mauá.
+      </p>
     </div>
   </section>
 
