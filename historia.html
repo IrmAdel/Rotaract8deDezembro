@@ -68,12 +68,16 @@
     }
 
     .galeria-conselhos .conselho-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
       background: #fff;
       padding: 1.2rem 0.8rem;
       border-radius: 8px;
       box-shadow: 0 2px 10px var(--shadow);
       transition: box-shadow 0.3s ease;
+      height: 100%;
     }
 
     .galeria-conselhos .conselho-item:hover {
@@ -84,52 +88,84 @@
       background: #2a2422;
     }
 
-    .galeria-conselhos .conselho-item img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
+    /* ===== FOTO - TAMANHO FIXO E UNIFORME ===== */
+    .galeria-conselhos .conselho-item .foto-wrapper {
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
       border-radius: 50%;
       border: 4px solid var(--secondary);
-      max-width: 120px;
+      overflow: hidden;
       margin: 0 auto;
+    }
+
+    .galeria-conselhos .conselho-item .foto-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
 
-    .galeria-conselhos .conselho-item .nome {
+    /* ===== TEXTO - ALTURA FIXA E ALINHAMENTO ===== */
+    .galeria-conselhos .conselho-item .info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 100%;
       margin-top: 0.8rem;
+    }
+
+    .galeria-conselhos .conselho-item .nome {
       font-weight: 700;
       font-size: 0.95rem;
       color: var(--primary);
+      line-height: 1.2;
+      min-height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .galeria-conselhos .conselho-item .cargo {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       opacity: 0.8;
-      margin-top: 0.2rem;
-      line-height: 1.3;
+      line-height: 1.2;
+      min-height: 2.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.2rem;
     }
 
     .galeria-conselhos .conselho-item .cargo small {
       display: block;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       opacity: 0.7;
+      line-height: 1.2;
     }
 
-    .ano-destaque {
+    /* ===== TAG DO ANO - SEMPRE NO FINAL ===== */
+    .galeria-conselhos .conselho-item .ano-destaque {
       background: var(--secondary);
       color: #fff;
       padding: 0.15rem 0.6rem;
       border-radius: 20px;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 600;
       display: inline-block;
-      margin-top: 0.3rem;
+      margin-top: auto;
+      flex-shrink: 0;
+      letter-spacing: 0.5px;
     }
 
     /* ===== RESPONSIVIDADE ===== */
     @media (max-width: 1024px) {
       .galeria-conselhos {
         grid-template-columns: repeat(5, 1fr);
+      }
+      .galeria-conselhos .conselho-item .foto-wrapper {
+        width: 100px;
+        height: 100px;
       }
     }
 
@@ -138,12 +174,36 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
       }
+      .galeria-conselhos .conselho-item .foto-wrapper {
+        width: 90px;
+        height: 90px;
+      }
+      .galeria-conselhos .conselho-item .nome {
+        font-size: 0.85rem;
+        min-height: 2rem;
+      }
+      .galeria-conselhos .conselho-item .cargo {
+        font-size: 0.65rem;
+        min-height: 2.4rem;
+      }
     }
 
     @media (max-width: 480px) {
       .galeria-conselhos {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
+      }
+      .galeria-conselhos .conselho-item .foto-wrapper {
+        width: 80px;
+        height: 80px;
+      }
+      .galeria-conselhos .conselho-item .nome {
+        font-size: 0.8rem;
+        min-height: 1.8rem;
+      }
+      .galeria-conselhos .conselho-item .cargo {
+        font-size: 0.6rem;
+        min-height: 2rem;
       }
     }
   </style>
@@ -208,46 +268,80 @@
 
       <div class="galeria-conselhos">
         <div class="conselho-item">
-          <img src="conselho/victoria.PNG" alt="Victoria Eugênio" />
-          <div class="nome">Victoria Eugênio</div>
-          <div class="cargo">Presidente <small>Diretora de Oratória</small></div>
-          <span class="ano-destaque">2026-27</span>
+          <div class="foto-wrapper">
+            <img src="conselho/victoria.PNG" alt="Victoria Eugênio" />
+          </div>
+          <div class="info">
+            <div class="nome">Victoria Eugênio</div>
+            <div class="cargo"><small>Presidente e Diretora de Oratória</small></div>
+            <span class="ano-destaque">2026-27</span>
+          </div>
         </div>
+
         <div class="conselho-item">
-          <img src="conselho/pedro.PNG" alt="Pedro Vasconcelos" />
-          <div class="nome">Pedro Vasconcelos</div>
-          <div class="cargo">Vice-Presidente <small>Imagem Pública &amp; Protocolo</small></div>
-          <span class="ano-destaque">2026-27</span>
+          <div class="foto-wrapper">
+            <img src="conselho/pedro.PNG" alt="Pedro Vasconcelos" />
+          </div>
+          <div class="info">
+            <div class="nome">Pedro Vasconcelos</div>
+            <div class="cargo"><small>Vice-Presidente, Imagem Pública &amp; Protocolo</small></div>
+            <span class="ano-destaque">2026-27</span>
+          </div>
         </div>
+
         <div class="conselho-item">
-          <img src="conselho/andre.PNG" alt="André Girialdeli" />
-          <div class="nome">André Girialdeli</div>
-          <div class="cargo">Secretário <small>DEI</small></div>
-          <span class="ano-destaque">2026-27</span>
+          <div class="foto-wrapper">
+            <img src="conselho/andre.PNG" alt="André Girialdeli" />
+          </div>
+          <div class="info">
+            <div class="nome">André Girialdeli</div>
+            <div class="cargo"><small>Secretário e DEI</small></div>
+            <span class="ano-destaque">2026-27</span>
+          </div>
         </div>
+
         <div class="conselho-item">
-          <img src="conselho/wendell.PNG" alt="Wendell Almeida" />
-          <div class="nome">Wendell Almeida</div>
-          <div class="cargo">DQA <small>Desenv. Quadro Associativo</small></div>
-          <span class="ano-destaque">2026-27</span>
+          <div class="foto-wrapper">
+            <img src="conselho/wendell.PNG" alt="Wendell Almeida" />
+          </div>
+          <div class="info">
+            <div class="nome">Wendell Almeida</div>
+            <div class="cargo"><small>Desenvolvimento Quadro Associativo</small></div>
+            <span class="ano-destaque">2026-27</span>
+          </div>
         </div>
+
         <div class="conselho-item">
-          <img src="conselho/anna.PNG" alt="Anna Beatriz" />
-          <div class="nome">Anna Beatriz</div>
-          <div class="cargo">Tesoureira</div>
-          <span class="ano-destaque">2026-27</span>
+          <div class="foto-wrapper">
+            <img src="conselho/anna.PNG" alt="Anna Beatriz" />
+          </div>
+          <div class="info">
+            <div class="nome">Anna Beatriz</div>
+            <div class="cargo"><small>Tesoureira</small></div>
+            <span class="ano-destaque">2026-27</span>
+          </div>
         </div>
+
         <div class="conselho-item">
-          <img src="conselho/rafaella.PNG" alt="Rafaella Bonardi" />
-          <div class="nome">Rafaella Bonardi</div>
-          <div class="cargo">Comissão de Projetos</div>
-          <span class="ano-destaque">2026-27</span>
+          <div class="foto-wrapper">
+            <img src="conselho/rafaella.PNG" alt="Rafaella Bonardi" />
+          </div>
+          <div class="info">
+            <div class="nome">Rafaella Bonardi</div>
+            <div class="cargo"><small>Comissão de Projetos</small></div>
+            <span class="ano-destaque">2026-27</span>
+          </div>
         </div>
+
         <div class="conselho-item">
-          <img src="conselho/malu.PNG" alt="Malu Zenke" />
-          <div class="nome">Malu Zenke</div>
-          <div class="cargo">Fundação Rotária</div>
-          <span class="ano-destaque">2026-27</span>
+          <div class="foto-wrapper">
+            <img src="conselho/malu.PNG" alt="Malu Zenke" />
+          </div>
+          <div class="info">
+            <div class="nome">Malu Zenke</div>
+            <div class="cargo"><small>Fundação Rotária</small></div>
+            <span class="ano-destaque">2026-27</span>
+          </div>
         </div>
       </div>
 
