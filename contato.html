@@ -99,11 +99,19 @@
     <div class="contact-grid">
       <!-- Formulário -->
       <div>
-        <form class="contact-form">
-          <input type="text" placeholder="Nome completo" required aria-label="Nome" />
-          <input type="email" placeholder="E-mail" required aria-label="E-mail" />
-          <input type="tel" placeholder="Telefone" aria-label="Telefone" />
-          <textarea rows="5" placeholder="Sua mensagem" aria-label="Mensagem"></textarea>
+        <form class="contact-form" action="https://formsubmit.co/rotaractmaua8dezembro+site@gmail.com" method="POST">
+          <!-- Campos ocultos do FormSubmit -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nova mensagem do site Rotaract Mauá">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://irmadel.github.io/Rotaract8deDezembro/contato.html">
+
+          <input type="text" name="nome" placeholder="Nome completo" required aria-label="Nome" />
+          <input type="email" name="email" placeholder="E-mail" required aria-label="E-mail" />
+          <input type="tel" name="telefone" placeholder="Telefone" aria-label="Telefone" />
+          <input type="text" name="assunto" placeholder="Assunto" required aria-label="Assunto" />
+          <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required aria-label="Mensagem"></textarea>
+
           <button class="btn btn-primary" type="submit">
             <i class="fas fa-paper-plane"></i> Enviar mensagem
           </button>
